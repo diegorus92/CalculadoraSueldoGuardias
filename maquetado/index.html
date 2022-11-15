@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/maquetado/bootstrap/css/bootstrap.css" type="text/css" >
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Calculo de Ganancia para Guardias</title>
+</head>
+<body>
+
+    <div class="container-sm cabecera">
+        <h1>Calculadora de guardias</h1>
+        <h5><i>Registro de guardias hechas y calculo de cobros mensuales</i></h5>
+    </div>
+
+    <div class="container-sm botones">
+        <button id="btn-nuevo-guardia" type="button" class="btn btn-primary">Agregar nuevo guardia</button>
+        <button id="btn-seleccion-guardia" type="button" class="btn btn-primary">Seleccionar guardia</button>
+    </div>
+
+    <!--Formularios AGREGADO/SELECCION-->
+    <div id="nuevo-guardia" class="container-sm container-centrado">
+        <form class="formulario" action="">
+            <input class="form-control form-control-lg" type="text" placeholder="Nombre del guardia" aria-label=".form-control-lg example">
+            <input class="form-control form-control-lg" type="text" placeholder="Apellido del guardia" aria-label=".form-control-lg example">
+
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+    </div>
+
+    <div id="seleccion-guardia" class="container-sm container-centrado">
+        <form class="formulario" action="">
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected>Seleccione al guardia</option>
+                <option value="1">Manuel</option>
+                <option value="2">Enrique</option>
+                <option value="3">Esteban</option>
+            </select>
+
+            <button type="submit" class="btn btn-success"><a href="ingreso.html">Seleccionar</a></button>
+        </form>
+    </div>
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    
+
+
+
+
+
+
+
+    <script src="/maquetado/bootstrap/js/bootstrap.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
