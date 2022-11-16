@@ -5,10 +5,194 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/maquetado/bootstrap/css/bootstrap.css" type="text/css" >
+    <link rel="stylesheet" href="/maquetado/ingreso.css" type="text/css">
     <title>Guardia: "Fulano de tal"</title>
 </head>
 <body>
-    <h1 id="titulo">Bienvenido: </h1>
+    <div class="container-sm">
+        <h1 id="titulo">Bienvenido: </h1>
+    </div>
+    
+    <div class="container-sm">
+
+        <!--Acordeón AÑO-->
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                  2022
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+
+
+                    <!--Acordeón MESES-->
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              Enero
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+
+                                <!--Tabla enero-->
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Día y fecha</th>
+                                        <th scope="col">Cantidad de horas</th>
+                                        <th scope="col">Lugar de guardia</th>
+                                        <th scope="col" class = "monto">Monto (ARS)</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Lunes 1</th>
+                                        <td>12</td>
+                                        <td>Bacará X</td>
+                                        <td class="monto">$ 1440</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Martes 2</th>
+                                        <td>12</td>
+                                        <td>Bacará X</td>
+                                        <td  class = "monto">$ 1440</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Miércoles 3</th>
+                                        <td>8</td>
+                                        <td>Los Naranjales</td>
+                                        <td  class = "monto">$ 960</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                        
+                                <div class="alert alert-success monto" role="alert">
+                                    Total: $ 3840
+                                </div>
+                                
+                                <!--////////////////////////////////////////////-->
+
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                              Febrero
+                            </button>
+                          </h2>
+                          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+
+                               <!--Tabla febrero-->
+                               <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Día y fecha</th>
+                                        <th scope="col">Cantidad de horas</th>
+                                        <th scope="col">Lugar de guardia</th>
+                                        <th scope="col" class = "monto">Monto (ARS)</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Lunes 1</th>
+                                        <td>12</td>
+                                        <td>Bacará X</td>
+                                        <td class="monto">$ 1440</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Martes 2</th>
+                                        <td>12</td>
+                                        <td>Bacará X</td>
+                                        <td  class = "monto">$ 1440</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Miércoles 3</th>
+                                        <td>8</td>
+                                        <td>Los Naranjales</td>
+                                        <td  class = "monto">$ 960</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                    
+                                <div class="alert alert-success monto" role="alert">
+                                    Total: $ 3840
+                                </div>
+                            
+                                <!--////////////////////////////////////////////--> 
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                              Marzo
+                            </button>
+                          </h2>
+                          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                
+                               <!--Tabla marzo-->
+                               <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Día y fecha</th>
+                                        <th scope="col">Cantidad de horas</th>
+                                        <th scope="col">Lugar de guardia</th>
+                                        <th scope="col" class = "monto">Monto (ARS)</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Lunes 1</th>
+                                        <td>12</td>
+                                        <td>Bacará X</td>
+                                        <td class="monto">$ 1440</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Martes 2</th>
+                                        <td>12</td>
+                                        <td>Bacará X</td>
+                                        <td  class = "monto">$ 1440</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Miércoles 3</th>
+                                        <td>8</td>
+                                        <td>Los Naranjales</td>
+                                        <td  class = "monto">$ 960</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                        
+                                <div class="alert alert-success monto" role="alert">
+                                    Total: $ 3840
+                                </div>
+                                
+                                <!--////////////////////////////////////////////--> 
+                                
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!--////////////////////////////////////-->
+
+                    
+                    
+                </div>
+              </div>
+            </div>
+        </div>
+        <!--////////////////////////////////////////////////////////////////-->
+
+    </div>
+        
 
 
 
