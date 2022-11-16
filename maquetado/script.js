@@ -18,3 +18,13 @@ btnNuevo.addEventListener("click", function(){activarFormulario("nuevo-guardia")
 
 var btnSeleccion = document.getElementById("btn-seleccion-guardia");
 btnSeleccion.addEventListener("click", function(){activarFormulario("seleccion-guardia");}, false);
+
+var selector = document.getElementById("selector");
+selector.addEventListener("change", (e)=>{
+    let obj = document.getElementById("selector");
+    let data = obj.options[obj.selectedIndex].text;
+    console.log(data);
+    
+    let destino = document.getElementById("submit-link");
+    destino.href = "ingreso.html?"+data;
+})
