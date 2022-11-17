@@ -10,6 +10,8 @@ export class AccesoPrincipalComponent implements OnInit {
 
   titulo: String = "Calculadora para Guardias";
   subtitulo: String = "Registro de guardias hechas y calculo de cobros mensuales";
+  botonAgregarGuardia: String= "Agregar Guardia";
+  botonSeleccionarGuardia: String = "Seleccionar Guardia";
 
   iconoCafe = faCoffee;
 

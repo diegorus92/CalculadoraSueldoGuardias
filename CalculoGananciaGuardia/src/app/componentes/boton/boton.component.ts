@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-boton',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotonComponent implements OnInit {
 
+  @Input()nombreBoton!: String;
+  activado: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toogleButton():void{
+    console.log("Presionado: "+this.nombreBoton);
+    this.activado = !this.activado;
+    console.log("Activado?: ", this.activado);
+  }
 }
