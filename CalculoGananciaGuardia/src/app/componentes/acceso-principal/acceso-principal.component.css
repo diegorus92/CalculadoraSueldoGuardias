@@ -1,0 +1,19 @@
+.cabecera{
+    text-align:  center;
+    margin-bottom: 15%;
+}
+
+.cabecera h5{
+    color: gray;
+}
+
+.botones{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+app-boton{
+    margin-left: 2%;
+    margin-right: 2%;
+}
