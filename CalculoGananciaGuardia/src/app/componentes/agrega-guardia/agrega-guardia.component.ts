@@ -37,7 +37,8 @@ export class AgregaGuardiaComponent implements OnInit {
 
     if(this.guardiaForm.valid){
       console.log(this.guardiaForm.value);
-      this.servicioGuardias.setListaGuardias(this.guardiaForm.value as IGuardia);
+      //this.servicioGuardias.setListaGuardias(this.guardiaForm.value as IGuardia);
+      this.servicioGuardias.agregarGuardia(this.guardiaForm.value as IGuardia).subscribe();
       this.guardiaForm.reset();
     }
     else{

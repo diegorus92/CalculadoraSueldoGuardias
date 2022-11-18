@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AccesoPrincipalComponent } from './componentes/acceso-principal/acceso-principal.component';
 import { BotonComponent } from './componentes/boton/boton.component';
@@ -22,7 +23,8 @@ import { SeleccionaGuardiaComponent } from './componentes/selecciona-guardia/sel
     BrowserModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

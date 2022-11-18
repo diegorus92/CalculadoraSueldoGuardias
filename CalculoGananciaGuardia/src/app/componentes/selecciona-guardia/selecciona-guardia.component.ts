@@ -9,12 +9,16 @@ import { GuardiasService } from 'src/app/servicios/guardias.service';
 })
 export class SeleccionaGuardiaComponent implements OnInit {
 
-  guardias!:IGuardia[];
+  guardias:IGuardia[] = [];
 
   constructor(private servicioGuardias:GuardiasService) { }
 
   ngOnInit(): void {
-    this.guardias = this.servicioGuardias.ListaGuardias;
+    this.servicioGuardias.getListaGuardias().
+      subscribe((guardias) =>{
+        this.guardias = guardias;
+        this.servicioGuardias.guardias = this.guardias;
+      });
   }
 
 }

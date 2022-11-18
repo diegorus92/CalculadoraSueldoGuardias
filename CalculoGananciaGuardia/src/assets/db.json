@@ -1,0 +1,29 @@
+{
+  "guardias": [
+    {
+      "id": 1,
+      "nombre": "Marcosxx",
+      "apellido": "Castro"
+    },
+    {
+      "id": 2,
+      "nombre": "Javierxx",
+      "apellido": "Monzon"
+    },
+    {
+      "id": 3,
+      "nombre": "Martinaxx",
+      "apellido": "Lopez"
+    },
+    {
+      "nombre": "Hector",
+      "apellido": "Buenafuente",
+      "id": 4
+    },
+    {
+      "nombre": "Diego",
+      "apellido": "Manolete",
+      "id": 5
+    }
+  ]
+}
