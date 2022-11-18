@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModuleTsModule } from './app-routing.module.ts/app-routing.module.ts.module';
 
 import { AccesoPrincipalComponent } from './componentes/acceso-principal/acceso-principal.component';
 import { BotonComponent } from './componentes/boton/boton.component';
 import { AgregaGuardiaComponent } from './componentes/agrega-guardia/agrega-guardia.component';
 import { SeleccionaGuardiaComponent } from './componentes/selecciona-guardia/selecciona-guardia.component';
+import { GuardiaComponent } from './componentes/guardia/guardia.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { SeleccionaGuardiaComponent } from './componentes/selecciona-guardia/sel
     AccesoPrincipalComponent,
     BotonComponent,
     AgregaGuardiaComponent,
-    SeleccionaGuardiaComponent
+    SeleccionaGuardiaComponent,
+    GuardiaComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModuleTsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

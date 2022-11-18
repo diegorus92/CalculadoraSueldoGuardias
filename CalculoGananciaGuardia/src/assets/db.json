@@ -24,6 +24,11 @@
       "nombre": "Diego",
       "apellido": "Manolete",
       "id": 5
+    },
+    {
+      "nombre": "Julio",
+      "apellido": "Ramirez",
+      "id": 6
     }
   ]
 }
