@@ -1,0 +1,30 @@
+<form [formGroup]="guardiaForm" class="formulario" (ngSubmit)="onEnviar($event)">
+    <input 
+        class="form-control form-control-lg" 
+        type="text" 
+        placeholder="Nombre del guardia" 
+        aria-label=".form-control-lg example"
+        formControlName="nombre"
+    >
+    <p 
+        *ngIf="Nombre?.touched && Nombre?.errors"
+        class="error">
+            Este campo no puede quedar vacío
+    </p>
+    
+
+    <input 
+        class="form-control form-control-lg" 
+        type="text" 
+        placeholder="Apellido del guardia" 
+        aria-label=".form-control-lg example"
+        formControlName="apellido"    
+    >
+    <p 
+        *ngIf="Apellido?.touched && Apellido?.errors"
+        class="error">
+            Este campo no puede quedar vacío
+    </p>
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+</form>

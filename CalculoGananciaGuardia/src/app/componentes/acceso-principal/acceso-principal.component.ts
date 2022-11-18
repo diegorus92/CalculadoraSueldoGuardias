@@ -12,7 +12,8 @@ export class AccesoPrincipalComponent implements OnInit {
   subtitulo: String = "Registro de guardias hechas y calculo de cobros mensuales";
   botonAgregarGuardia: String= "Agregar Guardia";
   botonSeleccionarGuardia: String = "Seleccionar Guardia";
-
+  estadoBotonAgregacion: boolean = false;
+  estadoBotonSeleccion: boolean = false;
   iconoCafe = faCoffee;
 
   constructor() { }
@@ -20,4 +21,11 @@ export class AccesoPrincipalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  activarFormularioAgregacion(estado:boolean):void{
+    this.estadoBotonAgregacion = estado;
+  }
+
+  activarFormularioSeleccion(estado:boolean):void{
+    this.estadoBotonSeleccion = estado;
+  }
 }

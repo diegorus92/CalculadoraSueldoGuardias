@@ -7,9 +7,25 @@
 <div class="container-sm botones">
     <app-boton 
         [nombreBoton]="botonAgregarGuardia"
-        ></app-boton>
+        (estadoBoton)="activarFormularioAgregacion($event)"
+    ></app-boton>
 
     <app-boton 
         [nombreBoton]="botonSeleccionarGuardia"
+        (estadoBoton)="activarFormularioSeleccion($event)"
         ></app-boton>
+</div>
+
+<div 
+    class="container-sm container-centrado"
+    *ngIf="estadoBotonAgregacion"
+>
+    <app-agrega-guardia></app-agrega-guardia>
+</div>
+
+<div 
+    class="container-sm container-centrado"
+    *ngIf="estadoBotonSeleccion"
+>
+    <app-selecciona-guardia></app-selecciona-guardia>
 </div>

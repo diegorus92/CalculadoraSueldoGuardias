@@ -1,0 +1,12 @@
+<form  class="formulario">
+    <select id="selector" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Seleccione al guardia</option>
+        <option 
+            *ngFor="let guardia of guardias"
+            [value]="guardia.id" 
+        >
+            {{guardia.apellido}} {{guardia.nombre}}
+        </option>
+    </select>
+
+    <button type="submit" class="btn btn-success">Seleccionar</button>
