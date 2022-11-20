@@ -1,5 +1,14 @@
-<form  class="formulario">
-    <select id="selector" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+<form  
+    class="formulario"  
+    (ngSubmit)="onEnviar($event)"
+    [formGroup]="formSelectGuardia"
+    >
+    <select 
+        id="selector" 
+        class="form-select form-select-lg mb-3" 
+        aria-label=".form-select-lg example"
+        formControlName="seleccion"
+        >
         <option selected>Seleccione al guardia</option>
         <option
             *ngFor="let guardia of guardias"

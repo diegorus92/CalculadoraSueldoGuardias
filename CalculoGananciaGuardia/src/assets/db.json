@@ -29,6 +29,117 @@
       "nombre": "Julio",
       "apellido": "Ramirez",
       "id": 6
+    },
+    {
+      "nombre": "Juancito",
+      "apellido": "Perez",
+      "id": 7
+    }
+  ],
+
+  "years":[
+    {
+      "id": 1,
+      "year": 2000,
+      "idGuardia": 1
+    },
+    {
+      "id": 2,
+      "year": 2001,
+      "idGuardia": 1
+    },
+    {
+      "id": 3,
+      "year": 2002,
+      "idGuardia": 1
+    },
+    {
+      "id": 4,
+      "year": 2000,
+      "idGuardia": 2
+    },
+    {
+      "id": 5,
+      "year": 2001,
+      "idGuardia": 2
+    },
+    {
+      "id": 6,
+      "year": 2010,
+      "idGuardia": 3
+    },
+    {
+      "id": 7,
+      "year": 2011,
+      "idGuardia": 3
+    }
+  ],
+  "meses":[
+    {
+      "id":1,
+      "nombre":"Enero",
+      "idYear":1
+    },
+    {
+      "id":2,
+      "nombre":"Febrero",
+      "idYear": 1
+    },
+    {
+      "id":3,
+      "nombre":"Enero",
+      "idYear":4
+    },
+    {
+      "id":4,
+      "nombre":"Enero",
+      "idYear":5
+    },
+    {
+      "id":5,
+      "nombre":"Febrero",
+      "idYear": 5
+    }
+  ],
+  "filas":[
+    {
+      "id":1,
+      "dia":"Lunes",
+      "fecha":"1",
+      "cantidadHorasGuardia":12,
+      "idMes":1
+    },
+    {
+      "id":2,
+      "dia":"Lunes",
+      "fecha":"1",
+      "cantidadHorasGuardia":12,
+      "idMes":2
+    }
+  ],
+  "objetivos":[
+    {
+      "id":1,
+      "nombre":"Bacará 10",
+      "direccion":"Pago Largo 1260",
+      "Telefono": "364567890",
+      "PagoPorHora": 120.00,
+      "idFila": 1
+    },
+    {
+      "id":2,
+      "nombre":"Bacará 10",
+      "direccion":"Pago Largo 1260",
+      "Telefono": "364567890",
+      "PagoPorHora": 120.00,
+      "idFila": 1
+    },
+    {
+      "id":3,
+      "nombre":"CD Previsora",
+      "direccion":"Ruta Aguila 50",
+      "PagoPorHora": 120.00,
+      "idFila": 1
     }
   ]
 }

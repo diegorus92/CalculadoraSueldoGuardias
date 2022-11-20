@@ -43,6 +43,9 @@ export class GuardiasService {
     return this.http.post<IGuardia>(this.apiUrl, nuevoGuardia, HttpOptions);
   }
 
+  buscarGuardia(id:Number):IGuardia{
+    return this.guardias.find(guardia=> id==guardia.id) as IGuardia;
+  }
   /*get ListaGuardias(){
     return this.listaGuardias;
   }

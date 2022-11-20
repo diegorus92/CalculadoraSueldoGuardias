@@ -8,7 +8,7 @@ import { AccesoTablasComponent } from '../tablas/componentes/acceso-tablas/acces
 const ROUTES: Routes = [
   {path: 'acceso-principal', component: AccesoPrincipalComponent},
   {path: '', redirectTo:'acceso-principal', pathMatch: 'full'},
-  {path: 'tablas', component: AccesoTablasComponent}
+  {path: 'tablas/:guardiaId', component: AccesoTablasComponent}
 ];
 
 @NgModule({

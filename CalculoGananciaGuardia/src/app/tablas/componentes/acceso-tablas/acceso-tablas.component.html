@@ -1,1 +1,10 @@
-<p>acceso-tablas works!</p>
+<app-nav></app-nav>
+
+<div class="container-sm">
+    <h1 id="titulo">Bienvenido: {{guardia.apellido}} {{guardia.nombre}}</h1>
+</div>
+
+<div class="container-sm" *ngFor="let year of yearsOfGuardia">
+    <app-year [year]="year"></app-year>
+</div>
+

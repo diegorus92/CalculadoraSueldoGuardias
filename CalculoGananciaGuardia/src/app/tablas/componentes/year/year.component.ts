@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IYear } from 'src/app/Interfaces/IYear';
 
 @Component({
   selector: 'app-year',
@@ -6,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./year.component.css']
 })
 export class YearComponent implements OnInit {
+
+  @Input()year: IYear = {
+    id: 0,
+    year: 2020,
+    idGuardia: 0
+  }
+ 
 
   constructor() { }
 

@@ -12,6 +12,7 @@ import { BotonComponent } from './componentes/boton/boton.component';
 import { AgregaGuardiaComponent } from './componentes/agrega-guardia/agrega-guardia.component';
 import { SeleccionaGuardiaComponent } from './componentes/selecciona-guardia/selecciona-guardia.component';
 import { GuardiaComponent } from './componentes/guardia/guardia.component';
+import { TablasModule } from './tablas/tablas.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,10 @@ import { GuardiaComponent } from './componentes/guardia/guardia.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModuleTsModule
+    AppRoutingModuleTsModule,
+  ],
+  exports: [
+    GuardiaComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
