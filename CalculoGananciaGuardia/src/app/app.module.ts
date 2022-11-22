@@ -13,6 +13,7 @@ import { AgregaGuardiaComponent } from './componentes/agrega-guardia/agrega-guar
 import { SeleccionaGuardiaComponent } from './componentes/selecciona-guardia/selecciona-guardia.component';
 import { GuardiaComponent } from './componentes/guardia/guardia.component';
 import { TablasModule } from './tablas/tablas.module';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TablasModule } from './tablas/tablas.module';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModuleTsModule,
+    MatSlideToggleModule,
   ],
   exports: [
     GuardiaComponent
