@@ -4,5 +4,6 @@ export interface IObjetivo{
     direccion:String;
     telefono?:String;
     pagoPorHora:Number;
-    idFila?:Number
+    idFila?:Number,
+    idGuardia?:Number
 }

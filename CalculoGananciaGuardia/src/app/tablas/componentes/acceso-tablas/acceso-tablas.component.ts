@@ -16,11 +16,14 @@ import { GuardiasService } from 'src/app/servicios/guardias.service';
 export class AccesoTablasComponent implements OnInit {
 
   guardia!: IGuardia;
+
   meses:IMes[] = [];
   filas:IFila[] = [];
   objetivos:IObjetivo[] = [];
   years:IYear[] = [];
+
   yearsOfGuardia: IYear[] = [];
+  mesesGuardia: IMes[] = [];
 
 
   constructor(private activaterRoute: ActivatedRoute, private servicioGuardia: GuardiasService, private servicioFacturacion: FacturacionService) { }
@@ -49,12 +52,36 @@ export class AccesoTablasComponent implements OnInit {
         console.log("No se recuperaron años");
       }
     });
+
+    //Busco los meses pertenecientes al guardia
+    this.servicioFacturacion.getListaMeses().subscribe((meses) => {
+      this.meses = meses;
+      this.servicioFacturacion.meses = this.meses;
+
+      if(this.meses.length > 0){
+        console.log("Meses recuperados: ", this.meses);
+        this.recuperarMesesDelGuardia(this.meses, Number(this.guardia.id));
+        console.log("Meses recuperados del guardia ", this.guardia.apellido," => ", this.mesesGuardia);
+      }
+      else{
+        console.log("No se recuperaron meses");
+      }
+    });
   }
 
   private recuperarYearsDelGuardia(years:IYear[], idGuardia:Number):void{
     for(let year of this.years){
       if(year.idGuardia == this.guardia.id){
         this.yearsOfGuardia.push(year);
+      }
+    }
+  }
+
+
+  private recuperarMesesDelGuardia(meses:IMes[], idGuardia:Number):void{
+    for(let mes of this.meses){
+      if(mes.idGuardia == this.guardia.id){
+        this.mesesGuardia.push(mes);
       }
     }
   }

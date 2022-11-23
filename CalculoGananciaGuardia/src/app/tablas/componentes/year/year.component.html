@@ -8,9 +8,12 @@
       </button>
     </h2>
     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-      <div class="accordion-body">
+      <div class="accordion-body" *ngFor="let mes of mesesDeEsteAnio">
 
-        <app-tabla-cobro></app-tabla-cobro>
+        <!--Meses-->
+        <app-tabla-cobro
+          [mes]="mes"
+        ></app-tabla-cobro>
 
       </div>
     </div>

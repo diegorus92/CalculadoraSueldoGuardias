@@ -5,6 +5,9 @@
 </div>
 
 <div class="container-sm" *ngFor="let year of yearsOfGuardia">
-    <app-year [year]="year"></app-year>
+    <app-year 
+        [year]="year"
+        [meses] = "mesesGuardia"
+    ></app-year>
 </div>
 

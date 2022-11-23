@@ -78,27 +78,32 @@
     {
       "id":1,
       "nombre":"Enero",
-      "idYear":1
+      "idYear":1,
+      "idGuardia": 1
     },
     {
       "id":2,
       "nombre":"Febrero",
-      "idYear": 1
+      "idYear": 1,
+      "idGuardia": 1
     },
     {
       "id":3,
       "nombre":"Enero",
-      "idYear":4
+      "idYear":4,
+      "idGuardia": 2
     },
     {
       "id":4,
       "nombre":"Enero",
-      "idYear":5
+      "idYear":5,
+      "idGuardia": 2
     },
     {
       "id":5,
       "nombre":"Febrero",
-      "idYear": 5
+      "idYear": 5,
+      "idGuardia":2
     }
   ],
   "filas":[
@@ -107,14 +112,18 @@
       "dia":"Lunes",
       "fecha":"1",
       "cantidadHorasGuardia":12,
-      "idMes":1
+      "idMes":1,
+      "idYear": 1,
+      "idGuardia":1
     },
     {
       "id":2,
       "dia":"Lunes",
       "fecha":"1",
       "cantidadHorasGuardia":12,
-      "idMes":2
+      "idMes":2,
+      "idYear": 1,
+      "idGuardia": 1
     }
   ],
   "objetivos":[
@@ -124,7 +133,8 @@
       "direccion":"Pago Largo 1260",
       "Telefono": "364567890",
       "PagoPorHora": 120.00,
-      "idFila": 1
+      "idFila": 1,
+      "idGuardia":1
     },
     {
       "id":2,
@@ -132,14 +142,16 @@
       "direccion":"Pago Largo 1260",
       "Telefono": "364567890",
       "PagoPorHora": 120.00,
-      "idFila": 1
+      "idFila": 1,
+      "idGuardia":1
     },
     {
       "id":3,
       "nombre":"CD Previsora",
       "direccion":"Ruta Aguila 50",
       "PagoPorHora": 120.00,
-      "idFila": 1
+      "idFila": 1,
+      "idGuardia":1
     }
   ]
 }

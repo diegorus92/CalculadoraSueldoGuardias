@@ -4,5 +4,7 @@ export interface IFila{
     dia:String,
     fecha:String,
     cantidadHorasGuardia:Number,
-    idMes:Number
+    idMes:Number,
+    idYear:Number,
+    idGuardia:Number
 }
