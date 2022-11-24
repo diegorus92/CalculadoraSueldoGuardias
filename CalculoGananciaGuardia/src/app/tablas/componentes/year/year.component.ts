@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IMes } from 'src/app/Interfaces/IMes';
 import { IYear } from 'src/app/Interfaces/IYear';
+import { FacturacionService } from 'src/app/servicios/facturacion.service';
 
 @Component({
   selector: 'app-year',
@@ -16,6 +17,7 @@ export class YearComponent implements OnInit {
   }
  
   @Input()meses: IMes[] = [];
+  copiaMeses:IMes[] = [];
 
   mesesDeEsteAnio: IMes[] = [];
 
@@ -25,10 +27,13 @@ export class YearComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("[YearComponent]Meses: ", this.meses);
+    
     this.recuperarMesesDeEsteAnio();
     console.log("[YearComponent] Meses recuperados de este año:", this.year.id, " :: ", this.mesesDeEsteAnio);
     
   }
+
+  
 
   private recuperarMesesDeEsteAnio():void{
     for(let mes of this.meses){
