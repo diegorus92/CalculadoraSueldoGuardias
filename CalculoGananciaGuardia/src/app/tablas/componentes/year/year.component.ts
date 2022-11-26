@@ -17,11 +17,10 @@ export class YearComponent implements OnInit {
   }
  
   @Input()meses: IMes[] = [];
-  copiaMeses:IMes[] = [];
 
   mesesDeEsteAnio: IMes[] = [];
 
-  constructor() {
+  constructor(private facturacionService: FacturacionService) {
     
    }
 
@@ -30,18 +29,21 @@ export class YearComponent implements OnInit {
     
     this.recuperarMesesDeEsteAnio();
     console.log("[YearComponent] Meses recuperados de este año:", this.year.id, " :: ", this.mesesDeEsteAnio);
-    
+
+    console.log("[YearComponent] idGuardia: ", this.year.idGuardia, ", idYear", this.year.id);
+
   }
 
   
-
   private recuperarMesesDeEsteAnio():void{
-    for(let mes of this.meses){
-      if(mes.idYear == this.year.id){
-        this.mesesDeEsteAnio.push(mes);
+    this.facturacionService.getListaMeses().
+    subscribe((meses) => {
+      for(let mes of meses){
+        if(mes.idYear == this.year.id){
+         this.mesesDeEsteAnio.push(mes);
+        }
       }
-    }
+    })
   }
-
 
 }

@@ -28,9 +28,11 @@ export class TablaCobroComponent implements OnInit {
     idGuardia: 0
   }
 
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
