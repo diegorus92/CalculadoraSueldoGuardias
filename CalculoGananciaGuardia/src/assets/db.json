@@ -118,6 +118,15 @@
     },
     {
       "id":2,
+      "dia":"Martes",
+      "fecha":"2",
+      "cantidadHorasGuardia":8,
+      "idMes":1,
+      "idYear": 1,
+      "idGuardia":1
+    },
+    {
+      "id":3,
       "dia":"Lunes",
       "fecha":"1",
       "cantidadHorasGuardia":12,
@@ -142,7 +151,7 @@
       "direccion":"Pago Largo 1260",
       "Telefono": "364567890",
       "PagoPorHora": 120.00,
-      "idFila": 1,
+      "idFila": 2,
       "idGuardia":1
     },
     {
@@ -150,7 +159,7 @@
       "nombre":"CD Previsora",
       "direccion":"Ruta Aguila 50",
       "PagoPorHora": 120.00,
-      "idFila": 1,
+      "idFila": 3,
       "idGuardia":1
     }
   ]

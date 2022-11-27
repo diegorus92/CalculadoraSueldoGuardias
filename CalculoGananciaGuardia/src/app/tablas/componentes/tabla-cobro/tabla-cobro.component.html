@@ -1,3 +1,4 @@
+<!--//////////Tabla de días-filas///////////////////-->
 <div class="accordion accordion-flush" id="accordionFlushExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="flush-headingOne">
@@ -20,16 +21,32 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">Lunes 1</th>
-                        <td>12</td>
-                        <td>
-                            <app-objetivo [objetivo]="objetivo"></app-objetivo>
-                        </td>
-                        <td class="monto">{{objetivo.pagoPorHora}}</td>
+                    <!--///////////Dias-Filas//////////////////-->
+                    
+                    <tr *ngFor="let dia of dias">
+                        <!--Reemplazar por FilaComponent en un ngFor de dias-->
+                        <th scope="row">{{dia.dia}} {{dia.fecha}}</th>
+                        <td>{{dia.cantidadHorasGuardia}}</td>
+                        
+                        <!--/////Objetivo//////-->
+                        
+                        <div *ngFor="let objetivo of objetivos">
+                            <div *ngIf="objetivo.idFila == dia.id ">
+                                <td>
+                                    <app-objetivo [objetivo]="objetivo"></app-objetivo>
+                                </td>
+                                <td class="monto">
+                                    $ {{objetivo.pagoPorHora}}
+                                </td>
+                            </div>
+                        </div>
+                    
+                        <!--////////////////////-->
+
                         <td><fa-icon [icon]="iconoEditar"></fa-icon></td>
                         <td><fa-icon [icon]="iconoEliminar"></fa-icon></td>
-                    </tr> 
+                    </tr>
+                    <!--///////////////////////////////////////////////////////--> 
                 </tbody> 
             </table>
 
