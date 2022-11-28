@@ -16,10 +16,10 @@
                         Día y Fecha
                     </div>
                     <div class="col">
-                      Cantidad de horas
+                      Horas
                     </div>
                     <div class="col">
-                        Lugar de guardia
+                        Lugar
                     </div>
                     <div class="col">
                         $/Hora (ARS)
@@ -37,12 +37,12 @@
 
                 <!--////////Filas-Dias/////////////////////-->
                 <div *ngFor="let dia of dias">
-                    <app-fila [dia]="dia"></app-fila>
+                    <app-fila [dia]="dia" (subtotalEmitter)="recibirSubtotales($event)"></app-fila>
                 </div>
                 <!--/////////////////////////////////////-->
 
                 <div class="alert alert-success monto" role="alert">
-                    Total: $ 0000
+                    {{calcularSubtotales() | currency:"$"}}
                 </div>
             </div>
             

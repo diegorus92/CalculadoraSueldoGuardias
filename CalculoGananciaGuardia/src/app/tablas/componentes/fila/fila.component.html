@@ -16,10 +16,10 @@
             {{objetivo.nombre}}
         </div>
         <div class="col">
-            $ {{objetivo.pagoPorHora}}
+            {{objetivo.pagoPorHora | currency:"$"}}
         </div>
         <div class="col">
-            $ {{calcularSubtotalFila()}}
+            {{calcularSubtotalFila() | currency:"$"}}
         </div>
         <div class="col">
             <fa-icon [icon]="iconoEditar"></fa-icon>

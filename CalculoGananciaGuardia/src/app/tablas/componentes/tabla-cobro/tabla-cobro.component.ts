@@ -28,7 +28,7 @@ export class TablaCobroComponent implements OnInit {
 
   dias: IFila[] = [];
 
-
+  subtotalesFilas:number[] = [];
 
   constructor(private servicioFacturacion: FacturacionService) { }
 
@@ -66,5 +66,22 @@ export class TablaCobroComponent implements OnInit {
     });
   }
 
+  recibirSubtotales(subtotalFila:number):void{
+    this.subtotalesFilas.push(subtotalFila);
+    console.log("[TablaCobroComponent] Mes ID: ",this.mes.id," ",this.mes.nombre,":: subtotales recibidos de FilaComponent: ",this.subtotalesFilas);
+  }
   
+  calcularSubtotales():number{
+    let acumulador:number = 0;
+    if(this.subtotalesFilas.length > 0){
+      for(let subtotal of this.subtotalesFilas){
+        acumulador += subtotal;
+      }
+    }
+    else{ 
+      console.log("[TablaCobroComponent] No hay subtotales cargados en lista")
+    }
+
+    return acumulador;
+  }
 }

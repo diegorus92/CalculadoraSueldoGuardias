@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { IFila } from 'src/app/Interfaces/Ifila';
 import { IObjetivo } from 'src/app/Interfaces/IObjetivo';
@@ -32,6 +32,7 @@ export class FilaComponent implements OnInit {
     pagoPorHora: 2.50
   }
 
+  @Output()subtotalEmitter = new EventEmitter<number>();
 
   constructor(private servicioFacturacion: FacturacionService) { }
 
@@ -39,6 +40,8 @@ export class FilaComponent implements OnInit {
     console.log("[FilaComponent] buscando objetivo de fila en servicio", this.objetivo);
     this.buscarObjetivo();
     console.log("[FilaComponent] Resultado de busqueda: ", this.objetivo);
+
+    this.emitirSubtotal();
   }
 
   private buscarObjetivo():void{
@@ -54,5 +57,16 @@ export class FilaComponent implements OnInit {
 
   calcularSubtotalFila():number{
     return this.objetivo.pagoPorHora * this.dia.cantidadHorasGuardia;
+  }
+
+  emitirSubtotal():void{
+    this.servicioFacturacion.getListaObjetivos().subscribe((objetivos)=>{
+      for(let objetivo of objetivos){
+        console.log("[FilaComponent] bucarObjetivo = ", objetivo);
+        if(objetivo.idFila == this.dia.id){
+          this.subtotalEmitter.emit(objetivo.pagoPorHora * this.dia.cantidadHorasGuardia);
+        }
+      }
+    })
   }
 }
