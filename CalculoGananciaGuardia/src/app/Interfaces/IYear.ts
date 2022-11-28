@@ -1,5 +1,5 @@
 export interface IYear{
-    id?:Number,
-    year: Number,
-    idGuardia:Number
+    id?:number,
+    year: number,
+    idGuardia:number
 }

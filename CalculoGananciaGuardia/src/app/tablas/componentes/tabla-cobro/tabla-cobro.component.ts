@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { faTrash, faEdit, faE } from '@fortawesome/free-solid-svg-icons';
 import { IFila } from 'src/app/Interfaces/Ifila';
 import { IMes } from 'src/app/Interfaces/IMes';
@@ -28,6 +28,8 @@ export class TablaCobroComponent implements OnInit {
 
   dias: IFila[] = [];
 
+
+
   constructor(private servicioFacturacion: FacturacionService) { }
 
   ngOnInit(): void {
@@ -40,6 +42,7 @@ export class TablaCobroComponent implements OnInit {
     this.recuperarObjetivosDelGuardia();
     console.log("[TablaCobroComponent] objetivos recuperados del guardia ID =  ", this.mes.idGuardia, ": ", this.objetivos);
   }
+
 
 
   private recuperarDiasDeEsteMes():void{
@@ -63,4 +66,5 @@ export class TablaCobroComponent implements OnInit {
     });
   }
 
+  
 }

@@ -1,10 +1,10 @@
 //Cada fila es un día
 export interface IFila{
-    id?:Number,
+    id?:number,
     dia:String,
     fecha:String,
-    cantidadHorasGuardia:Number,
-    idMes:Number,
-    idYear:Number,
-    idGuardia:Number
+    cantidadHorasGuardia:number,
+    idMes:number,
+    idYear:number,
+    idGuardia:number
 }

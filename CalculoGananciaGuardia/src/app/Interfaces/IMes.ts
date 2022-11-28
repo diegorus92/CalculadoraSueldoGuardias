@@ -1,6 +1,6 @@
 export interface IMes{
-    id?: Number,
+    id?: number,
     nombre: String,
-    idYear:Number,
-    idGuardia:Number
+    idYear:number,
+    idGuardia:number
 }

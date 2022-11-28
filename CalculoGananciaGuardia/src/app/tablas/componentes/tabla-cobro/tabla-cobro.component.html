@@ -9,6 +9,44 @@
       <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
         <div class="accordion-body">
             
+            <div class="container-sm text-center">
+
+                <div class="row align-items-start">
+                    <div class="col">
+                        Día y Fecha
+                    </div>
+                    <div class="col">
+                      Cantidad de horas
+                    </div>
+                    <div class="col">
+                        Lugar de guardia
+                    </div>
+                    <div class="col">
+                        $/Hora (ARS)
+                    </div>
+                    <div class="col">
+                        Subtotal (ARS)
+                    </div>
+                    <div class="col">
+                        Editar
+                    </div>
+                    <div class="col">
+                        Borrar
+                    </div>
+                </div>
+
+                <!--////////Filas-Dias/////////////////////-->
+                <div *ngFor="let dia of dias">
+                    <app-fila [dia]="dia"></app-fila>
+                </div>
+                <!--/////////////////////////////////////-->
+
+                <div class="alert alert-success monto" role="alert">
+                    Total: $ 0000
+                </div>
+            </div>
+            
+            <!--
             <table class="table">
                 <thead>
                     <tr>
@@ -20,40 +58,21 @@
                         <th scope="col">Borrar</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let dia of dias">
+                -->
                     <!--///////////Dias-Filas//////////////////-->
                     
-                    <tr *ngFor="let dia of dias">
-                        <!--Reemplazar por FilaComponent en un ngFor de dias-->
-                        <th scope="row">{{dia.dia}} {{dia.fecha}}</th>
-                        <td>{{dia.cantidadHorasGuardia}}</td>
-                        
-                        <!--/////Objetivo//////-->
-                        
-                        <div *ngFor="let objetivo of objetivos">
-                            <div *ngIf="objetivo.idFila == dia.id ">
-                                <td>
-                                    <app-objetivo [objetivo]="objetivo"></app-objetivo>
-                                </td>
-                                <td class="monto">
-                                    $ {{objetivo.pagoPorHora}}
-                                </td>
-                            </div>
-                        </div>
-                    
-                        <!--////////////////////-->
-
-                        <td><fa-icon [icon]="iconoEditar"></fa-icon></td>
-                        <td><fa-icon [icon]="iconoEliminar"></fa-icon></td>
-                    </tr>
-                    <!--///////////////////////////////////////////////////////--> 
+                    <!--
+                    <app-fila [dia] = "dia"></app-fila>
+                       
+                
                 </tbody> 
             </table>
 
             <div class="alert alert-success monto" role="alert">
                 Total: $ 3840
             </div>
-
+        -->
         </div>
       </div>
     </div>

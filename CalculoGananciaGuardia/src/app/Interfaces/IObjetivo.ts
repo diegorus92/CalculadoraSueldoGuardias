@@ -1,9 +1,9 @@
 export interface IObjetivo{
-    id?:Number;
+    id?:number;
     nombre:String;
     direccion:String;
     telefono?:String;
-    pagoPorHora:Number;
-    idFila?:Number,
-    idGuardia?:Number
+    pagoPorHora:number;
+    idFila?:number,
+    idGuardia?:number
 }

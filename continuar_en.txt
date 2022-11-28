@@ -1,0 +1,1 @@
+Resolver forma de sumar todos los subtotales de las FilasComponent en TablasCobroComponent para tener el total mensual.

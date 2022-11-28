@@ -141,7 +141,7 @@
       "nombre":"Bacará 10",
       "direccion":"Pago Largo 1260",
       "Telefono": "364567890",
-      "PagoPorHora": 120.00,
+      "pagoPorHora": 120,
       "idFila": 1,
       "idGuardia":1
     },
@@ -150,7 +150,7 @@
       "nombre":"Bacará 10",
       "direccion":"Pago Largo 1260",
       "Telefono": "364567890",
-      "PagoPorHora": 120.00,
+      "pagoPorHora": 120,
       "idFila": 2,
       "idGuardia":1
     },
@@ -158,7 +158,7 @@
       "id":3,
       "nombre":"CD Previsora",
       "direccion":"Ruta Aguila 50",
-      "PagoPorHora": 120.00,
+      "pagoPorHora": 140.50,
       "idFila": 3,
       "idGuardia":1
     }

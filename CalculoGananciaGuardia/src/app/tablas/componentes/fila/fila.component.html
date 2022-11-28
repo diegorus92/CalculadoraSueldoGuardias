@@ -2,4 +2,30 @@
     Este componente sera un día/fila individual en la tabla
     y contendrá cada uno un Objetivo correspondiente
 -->
-<p>fila works!</p>
+
+<div class="container-sm text-center">
+
+    <div class="row align-items-start">
+        <div class="col">
+            {{dia.dia}} {{dia.fecha}}
+        </div>
+        <div class="col">
+          {{dia.cantidadHorasGuardia}}
+        </div>
+        <div class="col">
+            {{objetivo.nombre}}
+        </div>
+        <div class="col">
+            $ {{objetivo.pagoPorHora}}
+        </div>
+        <div class="col">
+            $ {{calcularSubtotalFila()}}
+        </div>
+        <div class="col">
+            <fa-icon [icon]="iconoEditar"></fa-icon>
+        </div>
+        <div class="col">
+            <fa-icon [icon]="iconoEliminar"></fa-icon>
+        </div>
+    </div>
+</div>
