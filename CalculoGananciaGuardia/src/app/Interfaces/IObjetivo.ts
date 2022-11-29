@@ -1,8 +1,8 @@
 export interface IObjetivo{
     id?:number;
-    nombre:String;
-    direccion:String;
-    telefono?:String;
+    nombre:string;
+    direccion?:string;
+    telefono?:string;
     pagoPorHora:number;
     idFila?:number,
     idGuardia?:number

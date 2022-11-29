@@ -1,6 +1,17 @@
 
-<div class="container boton">
-    {{objetivo.id}}: {{objetivo.nombre}} 
+
+<div class="container boton" 
+    (click)="verInfoObjetivo()"    
+>
+    {{objetivo.nombre}} 
 </div>
+
+<div *ngIf="alternarInfo">
+    <app-info-objetivo 
+        [objetivo] = "objetivo"
+        (alternanciaEmitter)="apagarAlternanciaInfoObjetivo($event)"    
+    ></app-info-objetivo>
+</div>
+
 
 

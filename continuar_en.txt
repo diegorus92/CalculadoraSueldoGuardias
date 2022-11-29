@@ -1,2 +1,2 @@
--> Desarrollar visualización del ObjetivoComponent.
--> Agregar la forma de seleccionar y visualizar información del ObjetivoComponent en la tabla.
+-> Continuar implementando Alta de filas en TablaCobroscomponent
+-> Corregir problema en modal de Objetivo

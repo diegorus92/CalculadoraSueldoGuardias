@@ -140,7 +140,7 @@
       "id":1,
       "nombre":"Bacará 10",
       "direccion":"Pago Largo 1260",
-      "Telefono": "364567890",
+      "telefono": "364567890",
       "pagoPorHora": 120,
       "idFila": 1,
       "idGuardia":1
@@ -149,7 +149,7 @@
       "id":2,
       "nombre":"Bacará 10",
       "direccion":"Pago Largo 1260",
-      "Telefono": "364567890",
+      "telefono": "364567890",
       "pagoPorHora": 120,
       "idFila": 2,
       "idGuardia":1
@@ -158,9 +158,38 @@
       "id":3,
       "nombre":"CD Previsora",
       "direccion":"Ruta Aguila 50",
+      "telefono":"",
       "pagoPorHora": 140.50,
       "idFila": 3,
       "idGuardia":1
+    }
+  ],
+  "registro_objetivos":[
+    {
+      "id":1,
+      "nombre":"CD Previsora",
+      "direccion":"Ruta Aguila 50",
+      "telefono":"",
+      "pagoPorHora": 140.50
+    },
+    {
+      "id":2,
+      "nombre":"Bacará 10",
+      "direccion":"Pago Largo 1260",
+      "telefono": "364567890",
+      "pagoPorHora": 120
+    },
+    {
+      "id":3,
+      "nombre":"FRANCO",
+      "pagoPorHora": 0
+    },
+    {
+      "id":4,
+      "nombre":"Los Naranjales",
+      "direccion":"Belgrano 1233",
+      "telefono":"3624896523",
+      "pagoPorHora": 150
     }
   ]
 }

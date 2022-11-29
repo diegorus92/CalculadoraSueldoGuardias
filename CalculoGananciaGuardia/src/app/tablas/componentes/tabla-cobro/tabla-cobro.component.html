@@ -8,8 +8,54 @@
       </h2>
       <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
         <div class="accordion-body">
-            
+
             <div class="container-sm text-center">
+
+                <!--Boton Agregar Fila-->
+                <fa-icon 
+                    class="boton-agregar fa-2x" 
+                    [icon]="iconoAgregar" 
+                    (click)="alternarFormularioAlta()"
+                    >
+                </fa-icon>
+
+                <!--//////////Formulario de alta de fila/////////////-->
+                <form *ngIf="formularioAltaActivado">
+                    <div class="container-sm">
+
+                        <div class="row align-items-start">
+                            <div class="col">
+                                <label for="dia-fecha">Dia y fecha</label>
+                            </div>
+                            <div class="col">
+                               <input type="text" id="dia-fecha">
+                            </div>
+                        </div>
+                        <div class="row align-items-start">
+                            <div class="col">
+                              <label for="horas">Cantidad de horas</label>
+                            </div>
+                            <div class="col">
+                              <input type="text" id="horas">
+                            </div>
+                        </div>
+                        <p>
+                            <label for="objetivo"><b>Objetivo/Lugar</b></label>
+                            <select class="form-select" id="objetivo" aria-label="Default select example">
+                                <option selected>Seleccione lugar de guardia</option>
+                                <option *ngFor="let regObjetivo of registroObjetivos" 
+                                    [value]="regObjetivo.id"
+                                    >
+                                    {{regObjetivo.nombre}}
+                                </option>
+                            </select>
+                        </p>
+                        <p>
+                            <button type="button" class="btn btn-success">Guardar</button>  
+                        </p>
+                    </div>
+                </form>
+                <!--/////////////////////////////////////////////////-->
 
                 <div class="row align-items-start">
                     <div class="col">

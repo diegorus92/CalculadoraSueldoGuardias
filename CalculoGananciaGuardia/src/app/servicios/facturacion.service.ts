@@ -30,6 +30,7 @@ export class FacturacionService {
   mesesApiUrl = "http://localhost:3000/meses";
   diasApiUrl = "http://localhost:3000/filas";
   objetivosApiUrl = "http://localhost:3000/objetivos";
+  registroObjetivosApiUrl = "http://localhost:3000/registro_objetivos";
 
   constructor(private http:HttpClient) { }
 
@@ -76,4 +77,10 @@ get ListDias$():Observable<IFila[]>{
     return this.http.get<IObjetivo[]>(this.objetivosApiUrl);
   }
   //////////////////////////////////////////
+
+  ///////////////Registro de Objetivos///////////////////
+  getListaRegistroObjetivos():Observable<IObjetivo[]>{
+    return this.http.get<IObjetivo[]>(this.registroObjetivosApiUrl);
+  }
+  //////////////////////////////////////////////////////
 }

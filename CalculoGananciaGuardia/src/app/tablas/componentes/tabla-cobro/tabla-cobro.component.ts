@@ -1,5 +1,5 @@
 import { Component, Input, OnInit} from '@angular/core';
-import { faTrash, faEdit, faE } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faEdit, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { IFila } from 'src/app/Interfaces/Ifila';
 import { IMes } from 'src/app/Interfaces/IMes';
 import { IObjetivo } from 'src/app/Interfaces/IObjetivo';
@@ -14,6 +14,7 @@ export class TablaCobroComponent implements OnInit {
 
   iconoEliminar = faTrash;
   iconoEditar = faEdit;
+  iconoAgregar = faPlus;
 
 
   objetivos:IObjetivo[] = [];
@@ -29,6 +30,9 @@ export class TablaCobroComponent implements OnInit {
   dias: IFila[] = [];
 
   subtotalesFilas:number[] = [];
+  registroObjetivos:IObjetivo[] = [];
+  formularioAltaActivado:boolean = false;
+
 
   constructor(private servicioFacturacion: FacturacionService) { }
 
@@ -41,6 +45,10 @@ export class TablaCobroComponent implements OnInit {
     //Busco todos los objetivos segun el ID del guardia
     this.recuperarObjetivosDelGuardia();
     console.log("[TablaCobroComponent] objetivos recuperados del guardia ID =  ", this.mes.idGuardia, ": ", this.objetivos);
+
+    //Recupero todos los objetivos del registro para el select del formulario de alta de fila
+    this.recuperarRegistroObjetivos();
+    console.log("[TablaCobroComponent] Registro de objetivos recuperados =  ", this.registroObjetivos);
   }
 
 
@@ -66,6 +74,14 @@ export class TablaCobroComponent implements OnInit {
     });
   }
 
+  private recuperarRegistroObjetivos():void{
+    this.servicioFacturacion.getListaRegistroObjetivos().subscribe((objetivos) =>{
+      for(let objetivo of objetivos){
+        this.registroObjetivos.push(objetivo);
+      }
+    })
+  }
+
   recibirSubtotales(subtotalFila:number):void{
     this.subtotalesFilas.push(subtotalFila);
     console.log("[TablaCobroComponent] Mes ID: ",this.mes.id," ",this.mes.nombre,":: subtotales recibidos de FilaComponent: ",this.subtotalesFilas);
@@ -83,5 +99,9 @@ export class TablaCobroComponent implements OnInit {
     }
 
     return acumulador;
+  }
+
+  alternarFormularioAlta():void{
+    this.formularioAltaActivado = !this.formularioAltaActivado;
   }
 }

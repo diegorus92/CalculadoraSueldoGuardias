@@ -11,6 +11,7 @@ import { AppRoutingModuleTsModule } from '../app-routing.module.ts/app-routing.m
 import { ObjetivoComponent } from './componentes/objetivo/objetivo.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FilaComponent } from './componentes/fila/fila.component';
+import { InfoObjetivoComponent } from './componentes/info-objetivo/info-objetivo.component';
 
 
 
@@ -21,7 +22,8 @@ import { FilaComponent } from './componentes/fila/fila.component';
         TablaCobroComponent,
         NavComponent,
         ObjetivoComponent,
-        FilaComponent
+        FilaComponent,
+        InfoObjetivoComponent
     ],
     imports: [
         CommonModule,

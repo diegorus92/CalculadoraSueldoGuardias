@@ -13,7 +13,9 @@
           {{dia.cantidadHorasGuardia}}
         </div>
         <div class="col">
-            {{objetivo.nombre}}
+            <app-objetivo 
+                [objetivo]="objetivo"
+            ></app-objetivo>
         </div>
         <div class="col">
             {{objetivo.pagoPorHora | currency:"$"}}
