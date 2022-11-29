@@ -21,6 +21,7 @@ export class FacturacionService {
   meses:IMes[] = [];
   dias:IFila[] = [];
   objetivos: IObjetivo[] = [];
+  registroObjetivos:IObjetivo[] = [];
 
   private listYears = new BehaviorSubject<IYear[]>([]);
   private listMeses = new BehaviorSubject<IMes[]>([]);

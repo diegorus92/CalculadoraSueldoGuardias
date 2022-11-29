@@ -1,2 +1,3 @@
--> Continuar desarrollando el preparado de fila para enviar al servicio a agregar en AgregarFilaComponent
+-> Continuar implementando preparado de datos de FIla y Objetivo en AgregarFilaComponent para enviar al FacturacionService y agregar ID's
+-> Corregir recuperacion de datos de BD y almacenado en listas en memoria 
 -> Corregir problema en modal de Objetivo

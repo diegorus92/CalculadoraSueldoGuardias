@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IFila } from 'src/app/Interfaces/Ifila';
 import { IMes } from 'src/app/Interfaces/IMes';
 import { IObjetivo } from 'src/app/Interfaces/IObjetivo';
 import { FacturacionService } from 'src/app/servicios/facturacion.service';
@@ -13,6 +14,10 @@ export class AgregarFilaComponent implements OnInit {
 
   formAltaFila!:FormGroup;
   registroObjetivos:IObjetivo[] = [];
+  nuevoObj:IObjetivo = {
+    nombre: "",
+    pagoPorHora: 0
+  };
 
   @Input()mes:IMes ={ //Será usado para asociar la nueva fila y objetivo a su correspondiente lugar en tabla y guardia 
     id: 0,
@@ -29,8 +34,12 @@ export class AgregarFilaComponent implements OnInit {
     this.formAltaFila = this.formBuilder.group({
       dia:["",[Validators.required]],
       fecha:["",[Validators.required]],
-      cantHoras:[,[Validators.required]],
+      cantidadHorasGuardia:[,[Validators.required]],
       objetivo:[,[Validators.required]]
+    });
+
+    this.servicioFacturacion.getListaRegistroObjetivos().subscribe((regObjetivos) => {
+      this.servicioFacturacion.registroObjetivos = regObjetivos;
     });
   }
 
@@ -44,7 +53,7 @@ export class AgregarFilaComponent implements OnInit {
   }
 
   get CantHoras(){
-    return this.formAltaFila.get("cantHoras");
+    return this.formAltaFila.get("cantidadHorasGuardia");
   }
 
   get Objetivo(){
@@ -62,6 +71,18 @@ export class AgregarFilaComponent implements OnInit {
       //aqui se creará la el IFila y el IObjetivo para pasarselo al servicio y que lo agregue a la bd
       console.log("[AgregarFilaComponent] Formulario OK", this.formAltaFila.value);
       console.log("[AgregarFilaComponent] ID's de año, mes y guardia asociados: ", this.mes);
+      
+      
+      console.log(
+        "[AgregarFilaComponent] Nueva fila semi creada: ",
+        this.prepararDatosNuevaFila(this.formAltaFila.value as IFila, this.mes)
+      );
+
+      
+      console.log("[AgregarFilaComponent] nuevo objetivo semi creado: ",
+      this.prepararDatosNuevoObjetivo(Number.parseInt(this.formAltaFila.value.objetivo), this.mes)
+      );
+
     }
     else{
       alert("[AgragarFilaComponent] error en formulario de alta de fila");
@@ -69,7 +90,7 @@ export class AgregarFilaComponent implements OnInit {
     }
   }
 
-
+  //Recupera registroObjetivos de la BD y los guarda en una lista en memoria para tenerlos listos
   private recuperarRegistroObjetivos():void{
     this.servicioFacturacion.getListaRegistroObjetivos().subscribe((objetivos) =>{
       for(let objetivo of objetivos){
@@ -78,4 +99,39 @@ export class AgregarFilaComponent implements OnInit {
     })
   }
 
+  private prepararDatosNuevaFila(datosNuevaFila:IFila, datosFecha:IMes):IFila{
+    let nuevaFila: IFila = {
+      //El id de esta nueva fila se generará en el servicio antes de guardarlo en bd
+      dia: datosNuevaFila.dia,
+      fecha: datosNuevaFila.fecha,
+      cantidadHorasGuardia: datosNuevaFila.cantidadHorasGuardia,
+      idMes: datosFecha.id!,
+      idYear: datosFecha.idYear,
+      idGuardia: datosFecha.idGuardia
+    }
+
+    return nuevaFila;
+  }
+
+
+  private prepararDatosNuevoObjetivo(idObjetivoSeleccionado:number, datosFecha:IMes):IObjetivo{
+    let nuevoObj:IObjetivo = {
+      nombre:"", 
+      pagoPorHora: 0
+    };
+    let registroObjetivos = this.servicioFacturacion.registroObjetivos;
+    for(let obj of registroObjetivos){
+      if(obj.id == idObjetivoSeleccionado){
+        //id en el servicio
+        nuevoObj.nombre = obj.nombre;
+        nuevoObj.direccion = obj.direccion;
+        nuevoObj.telefono = obj.telefono;
+        nuevoObj.pagoPorHora = obj.pagoPorHora;
+        //idFIla en el servicio
+        nuevoObj.idGuardia = datosFecha.idGuardia;
+        return nuevoObj;
+      }
+    } 
+    return nuevoObj;
+  }
 }
