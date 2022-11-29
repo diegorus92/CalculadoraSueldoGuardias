@@ -58,13 +58,15 @@ export class FacturacionService {
 
 
   /////////////Filas-Dias//////////////////////
-get ListDias$():Observable<IFila[]>{
-  return this.listDias.asObservable();
-}
+  get ListDias$():Observable<IFila[]>{
+    return this.listDias.asObservable();
+  }
 
   getListaDias():Observable<IFila[]>{
     return this.http.get<IFila[]>(this.diasApiUrl);
   }
+
+  
   /////////////////////////////////////////////
 
 

@@ -1,2 +1,2 @@
--> Continuar implementando Alta de filas en TablaCobroscomponent
+-> Continuar desarrollando el preparado de fila para enviar al servicio a agregar en AgregarFilaComponent
 -> Corregir problema en modal de Objetivo

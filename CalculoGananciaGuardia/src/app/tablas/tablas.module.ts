@@ -12,6 +12,8 @@ import { ObjetivoComponent } from './componentes/objetivo/objetivo.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FilaComponent } from './componentes/fila/fila.component';
 import { InfoObjetivoComponent } from './componentes/info-objetivo/info-objetivo.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AgregarFilaComponent } from './componentes/agregar-fila/agregar-fila.component';
 
 
 
@@ -23,14 +25,17 @@ import { InfoObjetivoComponent } from './componentes/info-objetivo/info-objetivo
         NavComponent,
         ObjetivoComponent,
         FilaComponent,
-        InfoObjetivoComponent
+        InfoObjetivoComponent,
+        AgregarFilaComponent
     ],
     imports: [
         CommonModule,
         AppModule,
         HttpClientModule,
         AppRoutingModuleTsModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 export class TablasModule { }

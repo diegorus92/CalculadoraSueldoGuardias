@@ -1,0 +1,68 @@
+<form 
+    [formGroup]="formAltaFila"
+    (ngSubmit)="onSubmit($event)"
+    >
+    <div class="container-sm">
+
+        <!--Dia-->
+                       
+        <div class="row align-items-start">
+            <div class="col">
+                <label for="dia">Dia</label>
+            </div>
+            <div class="col">
+                <input type="text" id="dia" formControlName="dia">
+                <section *ngIf="Dia?.touched && Dia?.errors">
+                    <p class="error">Este campo no debe quedar vacío</p>
+                </section>
+            </div>
+        </div>
+        <!--Fecha-->
+                        
+        <div class="row align-items-start">
+            <div class="col">
+                <label for="fecha">Fecha</label>
+            </div>
+            <div class="col">
+                <input type="text" id="fecha" formControlName="fecha">
+                <section *ngIf="Fecha?.touched && Fecha?.errors">
+                    <p class="error">Este campo no debe quedar vacío</p>
+                </section>
+            </div>
+        </div>
+        <!--Cantidad de horas-->
+                        
+        <div class="row align-items-start">
+            <div class="col">
+                <label for="horas">Cantidad de horas</label>
+            </div>
+            <div class="col">
+                <input type="text" id="horas" formControlName="cantHoras">
+                    <section *ngIf="CantHoras?.touched && CantHoras?.errors">
+                        <p class="error">Este campo no debe quedar vacío</p>
+                    </section>
+            </div>
+        </div>
+        <!--Objetivo-->
+                        
+        <p>
+            <label for="objetivo"><b>Objetivo/Lugar</b></label>
+            <select class="form-select" id="objetivo" formControlName="objetivo" aria-label="Default select example">
+                <option selected>Seleccione lugar de guardia</option>
+                <option *ngFor="let regObjetivo of registroObjetivos" 
+                    [value]="regObjetivo.id"
+                    >
+                    {{regObjetivo.nombre}}
+                </option>
+            </select>
+        </p>
+        <section *ngIf="Objetivo?.touched && Objetivo?.errors">
+            <p class="error">Este campo no debe quedar vacío</p>
+        </section>
+        <!--Boton de guardado-->
+                        
+        <p>
+            <button type="submit" class="btn btn-success">Guardar</button>  
+        </p>
+    </div>
+</form>
