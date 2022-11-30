@@ -40,9 +40,10 @@ export class AccesoTablasComponent implements OnInit {
 
     //Obtenido el Guardia, busco en la BD los años que le corresponde al mismo
     this.servicioFacturacion.getListaYears().subscribe((years)=>{
+      //Aprovechando el subscribe cargo las listas y Subjects correspondientes al Year en este componente y el servicio
       this.years = years;
       this.servicioFacturacion.years = this.years;
-      this.servicioFacturacion.setearListYears$(years);
+      this.servicioFacturacion.settearListYears$(years);
 
       if(this.years.length > 0){
         console.log("Años recuperados: ", this.years);
@@ -58,7 +59,9 @@ export class AccesoTablasComponent implements OnInit {
     //Busco los meses pertenecientes al guardia
     this.servicioFacturacion.getListaMeses().subscribe((meses) => {
       this.meses = meses;
-      this.servicioFacturacion.meses = this.meses;
+      this.servicioFacturacion.meses = meses;
+      console.log("[AccesoTablasComponent]Meses en FacturacionService: ", this.servicioFacturacion.meses);
+      this.servicioFacturacion.settearListMeses$(meses);
 
       if(this.meses.length > 0){
         console.log("Meses recuperados: ", this.meses);
@@ -68,6 +71,26 @@ export class AccesoTablasComponent implements OnInit {
       else{
         console.log("No se recuperaron meses");
       }
+    });
+
+    //Cargo las listas y Subject correspondientes a los días/IFila para tenerlos a mano en memoria en FacturacionService
+    this.servicioFacturacion.getListaDias().subscribe(dias => {
+      this.filas = dias;
+      this.servicioFacturacion.dias = dias;
+      this.servicioFacturacion.settearListaDia$(dias);
+    });
+
+    //Cargo las listas y Subject correspondientes a los Objetivos por lo mismo que los días/IFila y demas listas
+    this.servicioFacturacion.getListaObjetivos().subscribe(objetivos => {
+      this.objetivos = objetivos;
+      this.servicioFacturacion.objetivos = objetivos;
+      this.servicioFacturacion.settearListObjetivos$(objetivos);
+    });
+
+    //Cargo la lista  y Subject de Registro de Objetivos en el serivcio de facturacion solamente para usarlos en otros componentes de formulario de altas y actualizacion mas adelante
+    this.servicioFacturacion.getListaRegistroObjetivos().subscribe(registroObjetivos => {
+      this.servicioFacturacion.registroObjetivos = registroObjetivos;
+      this.servicioFacturacion.settearListRegistroObjetivos(registroObjetivos);
     });
   }
 

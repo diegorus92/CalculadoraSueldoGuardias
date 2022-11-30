@@ -20,13 +20,15 @@ export class FacturacionService {
   years:IYear[] = [];
   meses:IMes[] = [];
   dias:IFila[] = [];
-  objetivos: IObjetivo[] = [];
-  registroObjetivos:IObjetivo[] = [];
+  objetivos: IObjetivo[] = []; //Corresponde a los objetivos asentados de cada guardia en cada dia o fila
+  registroObjetivos:IObjetivo[] = []; //Corresponde a una lista a parte de Objetivos cuya informacion se copiará  al dar de alta los objetivos de guardias en cada fila
 
   private listYears = new BehaviorSubject<IYear[]>([]);
   private listMeses = new BehaviorSubject<IMes[]>([]);
   private listDias = new BehaviorSubject<IFila[]>([]);
   private listObjetivos = new BehaviorSubject<IObjetivo[]>([]);
+  private listRegistroObjetivos = new BehaviorSubject<IObjetivo[]>([]);
+  
   YearApiUrl = "http://localhost:3000/years";
   mesesApiUrl = "http://localhost:3000/meses";
   diasApiUrl = "http://localhost:3000/filas";
@@ -40,7 +42,7 @@ export class FacturacionService {
     return this.listYears.asObservable();
   }
 
-  setearListYears$(years:IYear[]){
+  settearListYears$(years:IYear[]){
     this.listYears.next(years);
   }
 
@@ -59,6 +61,9 @@ export class FacturacionService {
     return this.http.get<IMes[]>(this.mesesApiUrl);
   }
 
+  settearListMeses$(meses:IMes[]):void{
+    this.listMeses.next(meses);
+  }
   ///////////////////////////////////////////////
 
 
@@ -69,6 +74,10 @@ export class FacturacionService {
 
   getListaDias():Observable<IFila[]>{
     return this.http.get<IFila[]>(this.diasApiUrl);
+  }
+
+  settearListaDia$(listaDias:IFila[]){
+    this.listDias.next(listaDias);
   }
 
   private generarIdFila():number{
@@ -90,12 +99,25 @@ export class FacturacionService {
   getListaObjetivos():Observable<IObjetivo[]>{
     return this.http.get<IObjetivo[]>(this.objetivosApiUrl);
   }
+
+  settearListObjetivos$(listaObjetivos:IObjetivo[]){
+    this.listObjetivos.next(listaObjetivos);
+  }
   //////////////////////////////////////////
 
   ///////////////Registro de Objetivos///////////////////
+  get ListRegistroObjetivos$():Observable<IObjetivo[]>{
+    return this.listRegistroObjetivos.asObservable();
+  }
+
   getListaRegistroObjetivos():Observable<IObjetivo[]>{
     return this.http.get<IObjetivo[]>(this.registroObjetivosApiUrl);
   }
+
+  settearListRegistroObjetivos(regObjetivos:IObjetivo[]):void{
+    this.listRegistroObjetivos.next(regObjetivos);
+  }
+
   //////////////////////////////////////////////////////
 
   
