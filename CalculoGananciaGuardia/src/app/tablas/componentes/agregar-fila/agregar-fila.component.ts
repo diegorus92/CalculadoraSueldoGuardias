@@ -72,12 +72,7 @@ export class AgregarFilaComponent implements OnInit {
       console.log("[AgregarFilaComponent] Formulario OK", this.formAltaFila.value);
       console.log("[AgregarFilaComponent] ID's de año, mes y guardia asociados: ", this.mes);
       
-      
-      console.log(
-        "[AgregarFilaComponent] Nueva fila semi creada: ",
-        this.prepararDatosNuevaFila(this.formAltaFila.value as IFila, this.mes)
-      );
-
+      this.servicioFacturacion.completadoCreacionNuevaFila(this.prepararDatosNuevaFila(this.formAltaFila.value as IFila, this.mes));
       
       console.log("[AgregarFilaComponent] nuevo objetivo semi creado: ",
       this.prepararDatosNuevoObjetivo(Number.parseInt(this.formAltaFila.value.objetivo), this.mes)

@@ -40,6 +40,10 @@ export class FacturacionService {
     return this.listYears.asObservable();
   }
 
+  setearListYears$(years:IYear[]){
+    this.listYears.next(years);
+  }
+
   getListaYears(): Observable<IYear[]>{
     return this.http.get<IYear[]>(this.YearApiUrl);
   }
@@ -67,7 +71,14 @@ export class FacturacionService {
     return this.http.get<IFila[]>(this.diasApiUrl);
   }
 
-  
+  private generarIdFila():number{
+    let numero = 0;
+    return numero;
+  }
+
+  completadoCreacionNuevaFila(nuevaFilaIncompleta:IFila):void{
+
+  }
   /////////////////////////////////////////////
 
 
@@ -86,4 +97,6 @@ export class FacturacionService {
     return this.http.get<IObjetivo[]>(this.registroObjetivosApiUrl);
   }
   //////////////////////////////////////////////////////
+
+  
 }

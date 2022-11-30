@@ -42,6 +42,7 @@ export class AccesoTablasComponent implements OnInit {
     this.servicioFacturacion.getListaYears().subscribe((years)=>{
       this.years = years;
       this.servicioFacturacion.years = this.years;
+      this.servicioFacturacion.setearListYears$(years);
 
       if(this.years.length > 0){
         console.log("Años recuperados: ", this.years);
