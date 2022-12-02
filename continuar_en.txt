@@ -1,3 +1,1 @@
--> Continuar implementando preparado de datos de FIla y Objetivo en AgregarFilaComponent para enviar al FacturacionService y agregar ID's
--> Continuar implementando generacion de ID para nueva fila en FacturacionService
--> Corregir problema en modal de Objetivo
+-> Implementar Edicion y Eliminacion de filas

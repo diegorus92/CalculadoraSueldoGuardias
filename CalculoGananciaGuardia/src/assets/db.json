@@ -36,8 +36,7 @@
       "id": 7
     }
   ],
-
-  "years":[
+  "years": [
     {
       "id": 1,
       "year": 2000,
@@ -74,121 +73,109 @@
       "idGuardia": 3
     }
   ],
-  "meses":[
+  "meses": [
     {
-      "id":1,
-      "nombre":"Enero",
-      "idYear":1,
-      "idGuardia": 1
-    },
-    {
-      "id":2,
-      "nombre":"Febrero",
+      "id": 1,
+      "nombre": "Enero",
       "idYear": 1,
       "idGuardia": 1
     },
     {
-      "id":3,
-      "nombre":"Enero",
-      "idYear":4,
-      "idGuardia": 2
+      "id": 2,
+      "nombre": "Febrero",
+      "idYear": 1,
+      "idGuardia": 1
     },
     {
-      "id":4,
-      "nombre":"Enero",
-      "idYear":5,
+      "id": 3,
+      "nombre": "Enero",
+      "idYear": 4,
       "idGuardia": 2
-    },
-    {
-      "id":5,
-      "nombre":"Febrero",
-      "idYear": 5,
-      "idGuardia":2
     }
   ],
-  "filas":[
+  "filas": [
     {
-      "id":1,
-      "dia":"Lunes",
-      "fecha":"1",
-      "cantidadHorasGuardia":12,
-      "idMes":1,
+      "id": 1,
+      "dia": "Lunes",
+      "fecha": "1",
+      "cantidadHorasGuardia": 12,
+      "idMes": 1,
       "idYear": 1,
-      "idGuardia":1
+      "idGuardia": 1
     },
     {
-      "id":2,
-      "dia":"Martes",
-      "fecha":"2",
-      "cantidadHorasGuardia":8,
-      "idMes":1,
+      "id": 2,
+      "dia": "Martes",
+      "fecha": "2",
+      "cantidadHorasGuardia": 8,
+      "idMes": 1,
       "idYear": 1,
-      "idGuardia":1
+      "idGuardia": 1
     },
     {
-      "id":3,
-      "dia":"Lunes",
-      "fecha":"1",
-      "cantidadHorasGuardia":12,
-      "idMes":2,
+      "id": 3,
+      "dia": "Lunes",
+      "fecha": "1",
+      "cantidadHorasGuardia": 12,
+      "idMes": 2,
       "idYear": 1,
       "idGuardia": 1
     }
   ],
-  "objetivos":[
+  "objetivos": [
     {
-      "id":1,
-      "nombre":"Bacará 10",
-      "direccion":"Pago Largo 1260",
+      "id": 1,
+      "nombre": "Bacará 10",
+      "direccion": "Pago Largo 1260",
       "telefono": "364567890",
       "pagoPorHora": 120,
       "idFila": 1,
-      "idGuardia":1
+      "idGuardia": 1
     },
     {
-      "id":2,
-      "nombre":"Bacará 10",
-      "direccion":"Pago Largo 1260",
+      "id": 2,
+      "nombre": "Bacará 10",
+      "direccion": "Pago Largo 1260",
       "telefono": "364567890",
       "pagoPorHora": 120,
       "idFila": 2,
-      "idGuardia":1
+      "idGuardia": 1
     },
     {
-      "id":3,
-      "nombre":"CD Previsora",
-      "direccion":"Ruta Aguila 50",
-      "telefono":"",
-      "pagoPorHora": 140.50,
+      "id": 3,
+      "nombre": "CD Previsora",
+      "direccion": "Ruta Aguila 50",
+      "telefono": "",
+      "pagoPorHora": 140.5,
       "idFila": 3,
-      "idGuardia":1
+      "idGuardia": 1
     }
   ],
-  "registro_objetivos":[
+  "registro_objetivos": [
     {
-      "id":1,
-      "nombre":"CD Previsora",
-      "direccion":"Ruta Aguila 50",
-      "telefono":"",
-      "pagoPorHora": 140.50
+      "id": 1,
+      "nombre": "CD Previsora",
+      "direccion": "Ruta Aguila 50",
+      "telefono": "",
+      "pagoPorHora": 140.5
     },
     {
-      "id":2,
-      "nombre":"Bacará 10",
-      "direccion":"Pago Largo 1260",
+      "id": 2,
+      "nombre": "Bacará 10",
+      "direccion": "Pago Largo 1260",
       "telefono": "364567890",
       "pagoPorHora": 120
     },
     {
-      "id":3,
-      "nombre":"FRANCO",
+      "id": 3,
+      "nombre": "FRANCO",
       "pagoPorHora": 0
     },
     {
-      "id":4,
-      "nombre":"Los Naranjales",
-      "direccion":"Belgrano 1233",
-      "telefono":"3624896523",
+      "id": 4,
+      "nombre": "Los Naranjales",
+      "direccion": "Belgrano 1233",
+      "telefono": "3624896523",
       "pagoPorHora": 150
     }
   ]

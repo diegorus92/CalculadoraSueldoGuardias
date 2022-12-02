@@ -21,7 +21,7 @@
 
                 <!--//////////Formulario de alta de fila/////////////-->
                 <div class="container" *ngIf="formularioAltaActivado">
-                    <app-agregar-fila [mes]="mes"></app-agregar-fila>
+                    <app-agregar-fila [mes]="mes" (agregadoEventEmitter)="actualizarFilas($event)"></app-agregar-fila>
                 </div>
                 
                 <!--/////////////////////////////////////////////////-->

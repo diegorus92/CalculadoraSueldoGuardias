@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IFila } from 'src/app/Interfaces/Ifila';
 import { IMes } from 'src/app/Interfaces/IMes';
@@ -25,6 +25,8 @@ export class AgregarFilaComponent implements OnInit {
     idYear: 0,
     idGuardia: 0
   }
+
+  @Output()agregadoEventEmitter = new EventEmitter<any[]>();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -72,12 +74,15 @@ export class AgregarFilaComponent implements OnInit {
       console.log("[AgregarFilaComponent] Formulario OK", this.formAltaFila.value);
       console.log("[AgregarFilaComponent] ID's de año, mes y guardia asociados: ", this.mes);
       
-      this.servicioFacturacion.completadoCreacionNuevaFila(this.prepararDatosNuevaFila(this.formAltaFila.value as IFila, this.mes));
-      
-      console.log("[AgregarFilaComponent] nuevo objetivo semi creado: ",
-      this.prepararDatosNuevoObjetivo(Number.parseInt(this.formAltaFila.value.objetivo), this.mes)
-      );
-
+      //Creacion y guardado de fila y objetivo
+      let nuevaFila:IFila = this.servicioFacturacion.completadoCreacionNuevaFila(this.prepararDatosNuevaFila(this.formAltaFila.value as IFila, this.mes));
+      let nuevoObjetivo:IObjetivo = this.servicioFacturacion.completadoCreacionNuevoObjetivos(this.prepararDatosNuevoObjetivo(Number.parseInt(this.formAltaFila.value.objetivo), this.mes), nuevaFila);
+      this.servicioFacturacion.guardarNuevaFilaYObjetivo(nuevaFila, nuevoObjetivo);//guardado
+      this.servicioFacturacion.postearFila(nuevaFila).subscribe();
+      this.servicioFacturacion.postearObjetivo(nuevoObjetivo).subscribe(() => {
+        //Emito el evento para que el componente padre (TablaCobroComponent) actualice la vista con la nueva fila
+        this.agregadoEventEmitter.emit([nuevaFila, nuevoObjetivo]);
+      });
     }
     else{
       alert("[AgragarFilaComponent] error en formulario de alta de fila");
@@ -129,4 +134,5 @@ export class AgregarFilaComponent implements OnInit {
     } 
     return nuevoObj;
   }
+
 }

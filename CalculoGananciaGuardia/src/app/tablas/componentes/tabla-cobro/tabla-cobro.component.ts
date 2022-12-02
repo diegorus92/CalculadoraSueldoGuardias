@@ -95,4 +95,15 @@ export class TablaCobroComponent implements OnInit {
   alternarFormularioAlta():void{
     this.formularioAltaActivado = !this.formularioAltaActivado;
   }
+
+  //Actualiza lista correspondientes a este componente y emite señal al padre (YearComponent) para que actualice también
+  actualizarFilas(datos:any[]){
+    if(datos.length == 2){
+      this.formularioAltaActivado = false;
+      /*this.recuperarDiasDeEsteMes();
+      this.recuperarObjetivosDelGuardia();*/
+      this.dias.push(datos[0]);
+      this.objetivos.push(datos[1]);
+    }
+  }
 }

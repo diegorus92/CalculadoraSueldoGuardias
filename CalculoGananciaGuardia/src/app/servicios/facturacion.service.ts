@@ -81,13 +81,21 @@ export class FacturacionService {
   }
 
   private generarIdFila():number{
-    let numero = 0;
-    return numero;
+    return this.dias.length > 0 ? Math.max(...this.dias.map(dia => dia.id!)) + 1 : 1;
   }
 
-  completadoCreacionNuevaFila(nuevaFilaIncompleta:IFila):void{
-
+  completadoCreacionNuevaFila(nuevaFilaIncompleta:IFila):IFila{
+    console.log("[FacturacionService] Ejecutando completadoCreacionNuevaFila: ");
+    nuevaFilaIncompleta.id = this.generarIdFila();
+    console.log("[FacturacionService] nueva fila completada para guardar: ", nuevaFilaIncompleta);
+    return nuevaFilaIncompleta;
   }
+
+  //guarda fila en bd
+  postearFila(nuevaFila:IFila):Observable<IFila>{
+    return this.http.post<IFila>(this.diasApiUrl, nuevaFila, HttpOptions);
+  }
+
   /////////////////////////////////////////////
 
 
@@ -102,6 +110,23 @@ export class FacturacionService {
 
   settearListObjetivos$(listaObjetivos:IObjetivo[]){
     this.listObjetivos.next(listaObjetivos);
+  }
+
+  private generarIdObjetivo():number{
+    return this.objetivos.length > 0 ? Math.max(...this.objetivos.map(objetivo => objetivo.id!)) + 1 : 1;
+  }
+
+  completadoCreacionNuevoObjetivos(nuevoObjetivoIncompleto:IObjetivo, nuevaFilaCompletada:IFila):IObjetivo{
+    nuevoObjetivoIncompleto.id = this.generarIdObjetivo();
+    nuevoObjetivoIncompleto.idFila = nuevaFilaCompletada.id;
+    nuevoObjetivoIncompleto.idGuardia = nuevaFilaCompletada.idGuardia;
+    console.log("[FacturacionService] nueva fila completada para guardar: ", nuevoObjetivoIncompleto);
+    return nuevoObjetivoIncompleto;
+  }
+
+  //guarda objetivo en bd
+  postearObjetivo(nuevoObjetivo:IObjetivo):Observable<IObjetivo>{
+    return  this.http.post<IObjetivo>(this.objetivosApiUrl, nuevoObjetivo, HttpOptions);
   }
   //////////////////////////////////////////
 
@@ -120,5 +145,15 @@ export class FacturacionService {
 
   //////////////////////////////////////////////////////
 
-  
+  ////////////////////Fila + Objetivo////////////////
+  guardarNuevaFilaYObjetivo(nuevaFila:IFila, nuevoObjetivo:IObjetivo):void{//guarda la nueva fila y objetivo en memoria ram y acutaliza las listas y subjects correspondientes en el serivicio
+    this.dias.push(nuevaFila);
+    console.log("[FacturacionService] Nueva fila agregada a lista de dias: ", this.dias);
+    this.listDias.next(this.dias);
+
+    this.objetivos.push(nuevoObjetivo);
+    console.log("[FacturacionService] Nuevo objetivo agregado a lista de objetivos: ", this.objetivos);
+    this.listObjetivos.next(this.objetivos); 
+  }
+  //////////////////////////////////////////////////
 }
